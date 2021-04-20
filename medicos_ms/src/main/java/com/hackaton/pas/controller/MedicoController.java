@@ -20,29 +20,29 @@ class MedicoController {
     private MedicoRepository repository;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Provider> findAll() {
+    public List<Medico> findAll() {
         return repository.findAll();
     }
 
     @GetMapping(value = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Provider> findById(@PathVariable("id") String id) {
-        Provider provider = repository.findById(id)
-            .orElseThrow(() -> new ResourceNotFoundException("Provider not found for this id :: " + id));
-        return ResponseEntity.ok().body(provider);
+    public ResponseEntity<Medico> findById(@PathVariable("id") String id) {
+        Medico medico = repository.findById(id)
+            .orElseThrow(() -> new ResourceNotFoundException("Medico not found for this id :: " + id));
+        return ResponseEntity.ok().body(medico);
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public Provider create(@RequestBody Provider resource) {
+    public Medico create(@RequestBody Medico resource) {
         return repository.save(resource);
     }
 
     @PutMapping(value = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<Provider> update(@PathVariable( "id" ) String id, @RequestBody Provider provider) {
-        provider.setId(id);
-        Provider updatedProvider = repository.save(provider);
-        return ResponseEntity.ok(updatedProvider);
+    public ResponseEntity<Medico> update(@PathVariable( "id" ) String id, @RequestBody Medico medico) {
+        medico.setId(id);
+        Medico updatedMedico = repository.save(medico);
+        return ResponseEntity.ok(updatedMedico);
     }
 
     @DeleteMapping(value = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)

@@ -9,6 +9,35 @@
             "mainClass": "com.hackaton.pas.ProvidersApplication",
             "projectName": "providers",
             "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MedicoApplication<providers>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "MedicoApplication",
+            "projectName": "providers",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MedicoApplication",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "MedicoApplication",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ProvidersApplication<providers>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "ProvidersApplication",
+            "projectName": "providers",
+            "args": ""
         }
     ]
 }
