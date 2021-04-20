@@ -8,7 +8,9 @@ import CrearCuadroMedico from './components/CrearCuadroMedico';
 import BuscarCentro from './components/BuscarCentro';
 import ActualizarCuadroMedico from './components/ActualizarCuadroMedico';
 import BuscarCuadroMedico from './components/BuscarCuadroMedico';
-import VisualizarCuadroMedico from './components/VisualizarCuadroMedico';
+import MostrarCuadroMedico from './components/MostrarCuadroMedico';
+import FormCentroSanitario from './components/FormCentroSanitario';
+import FormMedico from './components/FormMedico';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -46,8 +48,14 @@ class App extends React.Component {
       <Route path="/BuscarCuadroMedico/">
           <BuscarCuadroMedico/>
       </Route>
-      <Route path="/VisualizarCuadroMedico/">
-          <VisualizarCuadroMedico/>
+      <Route path="/MostrarCuadroMedico/">
+          <MostrarCuadroMedico/>
+      </Route>
+      <Route path="/FormCentroSanitario/">
+          <FormCentroSanitario/>
+      </Route>
+      <Route path="/FormMedico/">
+          <FormMedico/>
       </Route>
       </Router>
     );

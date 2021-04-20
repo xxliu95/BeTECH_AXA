@@ -28,13 +28,17 @@ class Home extends React.Component {
               </Button>{' '}</Link>
             </Col>
             <Col>
-              <Button variant="primary" className="text-center">Dar de alta Centro Sanitario</Button>{' '}
+              <Link to="/FormCentroSanitario/"><Button variant="primary" className="text-center">
+                Dar de alta Centro Sanitario
+              </Button>{' '}</Link>
             </Col>
           </Row>
           <Row>
             
             <Col>
-              <Button variant="primary" className="text-center">Crear Cuadro Médico</Button>{' '}
+              <Link to="/FormMedico/"><Button variant="primary" className="text-center">
+                Dar de alta médico
+              </Button>{' '}</Link>
             </Col>
             <Col>
               <Link to="/CrearCuadroMedico/"><Button variant="primary" className="text-center">Crear Cuadro Medico</Button>{' '}</Link>

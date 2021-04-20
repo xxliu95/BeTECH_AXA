@@ -1,13 +1,14 @@
 
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import React, {Fragment, useState} from 'react';
+import React, {Fragment, useRef, useState} from 'react';
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
 import Dropdown from "react-bootstrap/Dropdown";
 import GoogleMapReact from 'google-map-react';
-
+import {MapContainer, TileLayer, Marker, Popup, useMapEvent} from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
 
 import {
     BrowserRouter as Router,
@@ -15,9 +16,18 @@ import {
     Link
   } from "react-router-dom";
 
-  const AnyReactComponent = ({ text }) => <div>{text}</div>;
+const AnyReactComponent = ({ text }) => <div>{text}</div>;
+function SetViewOnClick({ animateRef }) {
+    const map = useMapEvent('click', (e) => {
+        map.setView(e.latlng, map.getZoom(), {
+            animate: animateRef.current || false,
+        })
+    })
 
+    return null
+}
 
+const position = [51.505, -0.09]
 class BuscarCentro extends React.Component{
 
   static defaultProps = {
@@ -35,6 +45,9 @@ class BuscarCentro extends React.Component{
            especialidad: '',
            poblacion:'',
            codigopostal:'',
+           lat: 13.084622,
+           lng: 80.248357,
+           zoom: 9
        }
    }
 
@@ -42,7 +55,7 @@ class BuscarCentro extends React.Component{
         const { name, value } = e.target
         this.setState({ [name]: value })
     }
-    sizes = [ "X-Small", "Small", "Medium", "Large", "X-Large", "2X-Large" ];
+
 
 
     render() {
@@ -100,24 +113,28 @@ class BuscarCentro extends React.Component{
                             </Col>
                     </form>
                 </Container>
-                <Container>
-                  <Row>
 
-                  <div style={{ height: '100vh', width: '100%', padding:'10%' }}>
-                    <GoogleMapReact
-                      // bootstrapURLKeys={{ key: /* YOUR KEY HERE */ }}
-                      defaultCenter={this.props.center}
-                      defaultZoom={this.props.zoom}
-                    >
-                      <AnyReactComponent
-                        lat={59.955413}
-                        lng={30.337844}
-                        text="My Marker"
-                      />
-                    </GoogleMapReact>
-                  </div>
-                  </Row>
-                </Container>
+
+
+
+                    <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
+                        <TileLayer
+                            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                        />
+                        <Marker position={position}>
+                            <Popup>
+                                A pretty CSS3 popup. <br /> Easily customizable.
+                            </Popup>
+                        </Marker>
+                    </MapContainer>
+
+
+
+
+
+
+
                 <Container>
                 <Link to="/"><button className="btn btn-primary">                
                         Volver</button></Link>
