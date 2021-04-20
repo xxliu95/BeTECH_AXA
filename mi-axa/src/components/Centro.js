@@ -7,7 +7,7 @@ import axios from 'axios';
 class Centro extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {providers: []}
+    this.state = {providers: [], id:0}
   }
   componentDidMount() {
     axios.get("http://localhost:8081/providers/")
@@ -16,6 +16,13 @@ class Centro extends React.Component {
       this.setState({
         providers:res.data
       })
+    })
+  }
+
+  delete(id) {
+    axios.delete("http://localhost:8081/providers/"+id)
+    .then(() => {
+      this.componentDidMount();
     })
   }
   render() {
@@ -34,9 +41,9 @@ class Centro extends React.Component {
           {
             this.state.providers.map(provider => 
               <tr>
-              <td> <Form.Check type="checkbox" /></td>
               <td>{provider.nombre}</td>
               <td>{provider.id_tipo_proveedor} de {provider.provincia}</td>
+              <td> <button onClick={(e) => this.delete(provider.id)}>Borrar</button></td>
             </tr>
             )
           }
