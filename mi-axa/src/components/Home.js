@@ -58,6 +58,11 @@ class Home extends React.Component {
                 Buscar Centro Sanitario
               </Button>{' '}</Link>
             </Col>
+            <Col>
+            <Link to="/Centro/"><Button variant="primary" className="text-center">
+                Crear Centro Sanitario
+              </Button>{' '}</Link>
+            </Col>
           </Row>
         </Container>
 

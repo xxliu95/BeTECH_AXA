@@ -49,9 +49,6 @@ class Centro extends React.Component {
           }
         </tbody>
       </Table>
-      <Button variant="primary" type="submit">
-        Guardar
-      </Button>
       </Form>
     );
   }
