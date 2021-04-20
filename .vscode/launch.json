@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ProvidersApplication<providers>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.hackaton.pas.ProvidersApplication",
+            "projectName": "providers",
+            "args": ""
+        }
+    ]
+}
