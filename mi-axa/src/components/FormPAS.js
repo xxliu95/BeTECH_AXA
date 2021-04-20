@@ -163,8 +163,8 @@ class FormPAS extends React.Component{
                     </form>
                 </Container>
                 <Container>
-                    <button className="btn btn-primary">                
-                        <Link to="/Especialidad/">Especialidad</Link></button>
+                <Link to="/Especialidad/"><button className="btn btn-primary">                
+                        Especialidad</button></Link>
                     <button type="submit" className="btn btn-primary">Guardar y Salir</button>
                 </Container>
 

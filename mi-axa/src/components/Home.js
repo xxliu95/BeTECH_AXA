@@ -23,22 +23,21 @@ class Home extends React.Component {
           </Row>
           <Row>
             <Col>
-              <Button variant="primary" className="text-center">
-                <Link to="/FormPAS/">Dar de alta PAS</Link>
-              </Button>{' '}
+            <Link to="/FormPAS/"><Button variant="primary" className="text-center">
+                Dar de alta PAS
+              </Button>{' '}</Link>
             </Col>
             <Col>
               <Button variant="primary" className="text-center">Dar de alta Centro Sanitario</Button>{' '}
             </Col>
           </Row>
           <Row>
-            <Col>
-              <Button variant="primary" className="text-center">
-              <Link to="/CrearCuadroMedico/">Crear Cuadro Medico</Link>
-              </Button>{' '}
-            </Col>
+            
             <Col>
               <Button variant="primary" className="text-center">Crear Cuadro Médico</Button>{' '}
+            </Col>
+            <Col>
+              <Link to="/CrearCuadroMedico/"><Button variant="primary" className="text-center">Crear Cuadro Medico</Button>{' '}</Link>
             </Col>
           </Row>
           <Row>
@@ -46,12 +45,14 @@ class Home extends React.Component {
               <Button variant="primary" className="text-center">Visualizar Cuadros Médicos</Button>{' '}
             </Col>
             <Col>
-              <Button variant="primary" className="text-center">Buscar, modificar y eliminar Cuadro Médico</Button>{' '}
+              <Link to="/BuscarCuadroMedico/"><Button variant="primary" className="text-center">Buscar, modificar y eliminar cuadro medico</Button>{' '}</Link>
             </Col>
           </Row>
           <Row>
             <Col>
-              <Button variant="primary" className="text-center">Buscar Centro Sanitario</Button>{' '}
+            <Link to="/BuscarCentro/"><Button variant="primary" className="text-center">
+                Buscar Centro Sanitario
+              </Button>{' '}</Link>
             </Col>
           </Row>
         </Container>
