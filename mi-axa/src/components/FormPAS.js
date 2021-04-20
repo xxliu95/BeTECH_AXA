@@ -12,6 +12,7 @@ import {
     Route,
     Link
   } from "react-router-dom";
+import axios from 'axios';
 
 class FormPAS extends React.Component{
 
@@ -30,11 +31,25 @@ class FormPAS extends React.Component{
        }
    }
 
+   submit(event) {
+     event.preventDefault();
+     axios.post("http://localhost:8081/providers/", {
+         cif:this.state.cif,
+         direccion:this.state.direccion,
+         provincia:this.state.provincia,
+         persona_contacto:this.state.personacontacto,
+         id_tipo_proveedor:this.state.tipoproveedor,
+         nombre:this.state.nombrecompleto,
+         poblacion:this.state.poblacion,
+         codigo_postal:this.state.codigopostal,
+         contacto:this.state.email
+     })
+   }
+
     handleChange = (e) => {
         const { name, value } = e.target
         this.setState({ [name]: value })
     }
-    sizes = [ "X-Small", "Small", "Medium", "Large", "X-Large", "2X-Large" ];
 
 
     render() {
@@ -165,7 +180,7 @@ class FormPAS extends React.Component{
                 <Container>
                 <Link to="/Especialidad/"><button className="btn btn-primary">                
                         Especialidad</button></Link>
-                    <button type="submit" className="btn btn-primary">Guardar y Salir</button>
+                <button type="submit" onClick={(e) => this.submit(e)} className="btn btn-primary">Guardar</button>
                 </Container>
 
                 <ul>

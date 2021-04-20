@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "nombre": "Laura",
+    "apellidos": "Pérez López",
+    "telefono": "916391053",
+    "comentarios": "-Es especialista en dermatología y pediatría. -Pasa consulta en el centro sanitario de Madrid del hospital Vithas.",
+    "numeroColegiado": "78190"
+  },
+  {
+    "id": "2",
+    "nombre": "Roberto",
+    "apellidos": "López Gil",
+    "telefono": "761892651",
+    "comentarios": "-Es especialista en medicina general y endocrinología. -Pasa consulta en el centro sanitario de Madrid del hospital Vithas y en la clínica Madrid.",
+    "numeroColegiado": "02517"
+  },
+  {
+    "id": "3",
+    "nombre": "María",
+    "apellidos": "Montero Beltrán",
+    "telefono": "82716401",
+    "comentarios": "-Es especialista en oncología. -Pasa consulta en el centro sanitario de Madrid de Quirón y en el centro sanitario de Madrid del hospital Vithas.",
+    "numeroColegiado": "81640"
+  },
+  {
+    "id": "4",
+    "nombre": "Raúl",
+    "apellidos": "García González",
+    "telefono": "71629182",
+    "comentarios": "-Es especialista en psiquiatría. -Pasa consulta en el centro sanitario de Bilbao del hospital Vithas.",
+    "numeroColegiado": "18461"
+  },
+  {
+    "id": "5",
+    "nombre": "Marta",
+    "apellidos": "Neira Robles",
+    "telefono": "71859172",
+    "comentarios": "-Es especialista en oncología y neurología. -Pasa consulta en el centro sanitario de Madrid del hospital Vithas y en el centro sanitario de Barcelona del hospital Quirón.",
+    "numeroColegiado": "19471"
+  }
+]

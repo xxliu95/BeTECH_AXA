@@ -38,6 +38,26 @@
             "mainClass": "ProvidersApplication",
             "projectName": "providers",
             "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MedicoApplication<providers (2)>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "MedicoApplication",
+            "projectName": "providers (2)",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MedicoApplication<medicos>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.hackaton.pas.MedicoApplication",
+            "projectName": "medicos",
+            "args": ""
         }
     ]
 }

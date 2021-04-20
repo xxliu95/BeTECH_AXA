@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value="/medicos")
+@CrossOrigin
 class MedicoController {
 
     @Autowired

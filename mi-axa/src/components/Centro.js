@@ -2,8 +2,29 @@ import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
+import axios from 'axios';
 
 class Centro extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {providers: [], id:0}
+  }
+  componentDidMount() {
+    axios.get("http://localhost:8081/providers/")
+    .then((res) => {
+      console.log(res.data)
+      this.setState({
+        providers:res.data
+      })
+    })
+  }
+
+  delete(id) {
+    axios.delete("http://localhost:8081/providers/"+id)
+    .then(() => {
+      this.componentDidMount();
+    })
+  }
   render() {
     return (
       <Form>
@@ -17,11 +38,15 @@ class Centro extends React.Component {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>    <Form.Check type="checkbox" /></td>
-            <td>Quirón</td>
-            <td>Centro sanitario de Madrid</td>
-          </tr>
+          {
+            this.state.providers.map(provider => 
+              <tr>
+              <td>{provider.nombre}</td>
+              <td>{provider.id_tipo_proveedor} de {provider.provincia}</td>
+              <td> <button onClick={(e) => this.delete(provider.id)}>Borrar</button></td>
+            </tr>
+            )
+          }
         </tbody>
       </Table>
       <Button variant="primary" type="submit">

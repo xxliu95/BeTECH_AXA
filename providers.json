@@ -1,0 +1,47 @@
+[
+  {
+    "id": "607eae252065a86798f6ffbb",
+    "cif": "Q-60617639",
+    "nombre": "Hospital Quirón",
+    "direccion": "C/Falsa 123",
+    "poblacion": "Madrid",
+    "provincia": "Madrid",
+    "codigo_postal": "28002",
+    "fecha_alta": null,
+    "fecha_baja": null,
+    "observaciones": null,
+    "persona_contacto": "Homer J. Simpson",
+    "contacto": "homer.simpson@quiron.com",
+    "id_tipo_proveedor": "Hospital"
+  },
+  {
+    "id": "607eaea02065a86798f6ffbc",
+    "cif": "C-826730163",
+    "nombre": "Clínica Madrid",
+    "direccion": "C/Evergreen Terrace 742",
+    "poblacion": "Madrid",
+    "provincia": "Madrid",
+    "codigo_postal": "28008",
+    "fecha_alta": null,
+    "fecha_baja": null,
+    "observaciones": null,
+    "persona_contacto": "Marge Simpson",
+    "contacto": "marge.simpson@clinicamadrid.com",
+    "id_tipo_proveedor": "Clínica"
+  },
+  {
+    "id": "607eaf192065a86798f6ffbd",
+    "cif": "B-371917401",
+    "nombre": "Hospital Vithas",
+    "direccion": "C/Proveedores 25",
+    "poblacion": "Madrid",
+    "provincia": "Madrid",
+    "codigo_postal": "28005",
+    "fecha_alta": null,
+    "fecha_baja": null,
+    "observaciones": null,
+    "persona_contacto": "Nick Riviera",
+    "contacto": "nick.riviera@vithas.com",
+    "id_tipo_proveedor": "Hospital"
+  }
+]
