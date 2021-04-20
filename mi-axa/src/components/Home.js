@@ -23,9 +23,9 @@ class Home extends React.Component {
           </Row>
           <Row>
             <Col>
-              <Button variant="primary" className="text-center">
-                <Link to="/FormPAS/">Dar de alta PAS</Link>
-              </Button>{' '}
+            <Link to="/FormPAS/"><Button variant="primary" className="text-center">
+                Dar de alta PAS
+              </Button>{' '}</Link>
             </Col>
             <Col>
               <Button variant="primary" className="text-center">Dar de alta Centro Sanitario</Button>{' '}
@@ -49,7 +49,9 @@ class Home extends React.Component {
           </Row>
           <Row>
             <Col>
-              <Button variant="primary" className="text-center">Buscar Centro Sanitario</Button>{' '}
+            <Link to="/BuscarCentro/"><Button variant="primary" className="text-center">
+                Buscar Centro Sanitario
+              </Button>{' '}</Link>
             </Col>
           </Row>
         </Container>
