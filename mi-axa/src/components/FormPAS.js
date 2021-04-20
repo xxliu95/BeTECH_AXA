@@ -4,137 +4,186 @@ import Container from 'react-bootstrap/Container';
 import React, {Fragment, useState} from 'react';
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import Form from "react-bootstrap/Form";
 import Dropdown from "react-bootstrap/Dropdown";
 
+import {
+    BrowserRouter as Router,
+    Route,
+    Link
+  } from "react-router-dom";
 
+class FormPAS extends React.Component{
 
-const FormPAS = () => {
+   constructor(props) {
+       super(props);
+       this.state={
+           cif: '',
+           direccion: '',
+           provincia: '',
+           personacontacto: '',
+           tipoproveedor: '',
+           nombrecompleto:'',
+           poblacion:'',
+           codigopostal:'',
+           email:''
+       }
+   }
 
-    const [datos, setDatos] = useState({
-        nombre: '',
-        apellido: ''
-    })
-
-    const handleInputChange = (event) => {
-        // console.log(event.target.name)
-        // console.log(event.target.value)
-        setDatos({
-            ...datos,
-            [event.target.name] : event.target.value
-        })
+    handleChange = (e) => {
+        const { name, value } = e.target
+        this.setState({ [name]: value })
     }
-
-    const enviarDatos = (event) => {
-        event.preventDefault()
-        console.log('enviando datos...' + datos.nombre + ' ' + datos.apellido)
-    }
-
-    return (
-        <Fragment>
-            <h1>Formulario</h1>
-            <Container>
-            <form className="row" onSubmit={enviarDatos}>
-                <Col>
-                    <Row>
-                        <Col>
-                            <a>CIF</a>
-                        </Col>
-                        <Col>
-                            <input type="text" placeholder="Nombre" className="form-control" onChange={handleInputChange} name="nombre"></input>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                            <a>Dirección</a>
-                        </Col>
-                        <Col>
-                            <input type="text" placeholder="Nombre" className="form-control" onChange={handleInputChange} name="nombre"></input>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                            <a>Provincia</a>
-                        </Col>
-                        <Col>
-                            <input type="text" placeholder="Nombre" className="form-control" onChange={handleInputChange} name="nombre"></input>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                            <a>Persona de contacto</a>
-                        </Col>
-                        <Col>
-                            <input type="text" placeholder="Nombre" className="form-control" onChange={handleInputChange} name="nombre"></input>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                            <a>Tipo de proveedor</a>
-                        </Col>
-                        <Col>
-                            <Dropdown>
-                                <Dropdown.Toggle variant="success" id="dropdown-basic">
-                                    Dropdown Button
-                                </Dropdown.Toggle>
-
-                                <Dropdown.Menu onChange={handleInputChange}>
-                                    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-                                </Dropdown.Menu>
-                            </Dropdown>
-                        </Col>
-                    </Row>
-                </Col>
-                <Col>
-                    <Row>
-                        <Col>
-                            <a>Nombre Completo</a>
-                        </Col>
-                        <Col>
-                            <input type="text" placeholder="Nombre" className="form-control" onChange={handleInputChange} name="nombre"></input>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                            <a>Población</a>
-                        </Col>
-                        <Col>
-                            <input type="text" placeholder="Nombre" className="form-control" onChange={handleInputChange} name="nombre"></input>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                            <a>Código postal</a>
-                        </Col>
-                        <Col>
-                            <input type="text" placeholder="Nombre" className="form-control" onChange={handleInputChange} name="nombre"></input>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                            <a>Email</a>
-                        </Col>
-                        <Col>
-                            <input type="text" placeholder="Nombre" className="form-control" onChange={handleInputChange} name="nombre"></input>
-                        </Col>
-                    </Row>
-                </Col>
+    sizes = [ "X-Small", "Small", "Medium", "Large", "X-Large", "2X-Large" ];
 
 
-            </form>
+    render() {
+        return (
+            <Fragment>
+                <h1>Formulario</h1>
+                <Container>
+                    <form className="row" >
+                        <Col>
+                            <Row>
+                                <Col>
+                                    <a>CIF</a>
+                                </Col>
+                                <Col>
+                                    <input type="cif"
+                                           placeholder="Nombre"
+                                           className="form-control"
+                                           name="cif"
+                                           onChange={this.handleChange} >
+                                    </input>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                    <a>Dirección</a>
+                                </Col>
+                                <Col>
+                                    <input type="text"
+                                           placeholder="Nombre"
+                                           className="form-control"
+                                           onChange={this.handleChange}
+                                           name="direccion"></input>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                    <a>Provincia</a>
+                                </Col>
+                                <Col>
+                                    <input type="text"
+                                           placeholder="Nombre"
+                                           className="form-control"
+                                           onChange={this.handleChange}
+                                           name="provincia"></input>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                    <a>Persona de contacto</a>
+                                </Col>
+                                <Col>
+                                    <input type="text"
+                                           placeholder="Nombre"
+                                           className="form-control"
+                                           onChange={this.handleChange}
+                                           name="personacontacto"></input>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                    <a>Tipo de proveedor</a>
+                                </Col>
+                                <Col>
+                                    <Form.Control
+                                        as="select" defaultValue="Choose..."
+                                        onChange={this.handleChange}
+                                        name="tipoproveedor">
+                                        <option >Proveedor 1</option>
+                                        <option>Proveedor 2</option>
+                                    </Form.Control>
+                                </Col>
+                            </Row>
+                        </Col>
+                        <Col>
+                            <Row>
+                                <Col>
+                                    <a>Nombre Completo</a>
+                                </Col>
+                                <Col>
+                                    <input type="text"
+                                           placeholder="Nombre"
+                                           className="form-control"
+                                           onChange={this.handleChange}
+                                           name="nombrecompleto"></input>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                    <a>Población</a>
+                                </Col>
+                                <Col>
+                                    <input type="text"
+                                           placeholder="Nombre"
+                                           className="form-control"
+                                           onChange={this.handleChange}
+                                           name="poblacion"></input>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                    <a>Código postal</a>
+                                </Col>
+                                <Col>
+                                    <input type="text"
+                                           placeholder="Nombre"
+                                           className="form-control"
+                                           onChange={this.handleChange}
+                                           name="codigopostal"></input>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                    <a>Email</a>
+                                </Col>
+                                <Col>
+                                    <input type="text"
+                                           placeholder="Nombre"
+                                           className="form-control"
+                                           onChange={this.handleChange}
+                                           name="email"></input>
+                                </Col>
+                            </Row>
+                        </Col>
+
+
+                    </form>
                 </Container>
-            <Container>
-                <button type="submit" className="btn btn-primary">Especialidad</button>
-                <button type="submit" className="btn btn-primary">Guardar y Salir</button>
-            </Container>
+                <Container>
+                    <button className="btn btn-primary">                
+                        <Link to="/Especialidad/">Especialidad</Link></button>
+                    <button type="submit" className="btn btn-primary">Guardar y Salir</button>
+                </Container>
 
-            <ul>
-                <li>{datos.nombre}</li>
-                <li>{datos.apellido}</li>
-            </ul>
-        </Fragment>
-    );
+                <ul>
+                    <li>{this.state.cif}</li>
+                    <li>{this.state.direccion}</li>
+                    <li>{this.state.provincia}</li>
+                    <li>{this.state.personacontacto}</li>
+                    <li>{this.state.tipoproveedor}</li>
+                    <li>{this.state.nombrecompleto}</li>
+                    <li>{this.state.poblacion}</li>
+                    <li>{this.state.codigopostal}</li>
+                    <li>{this.state.email}</li>
+
+                </ul>
+            </Fragment>
+        );
+    }
+
 }
 
 export default FormPAS;

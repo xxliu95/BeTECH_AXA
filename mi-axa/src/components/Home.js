@@ -5,6 +5,11 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Especialidad from './Especialidad';
 import Centro from './Centro';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from "react-router-dom";
 
 class Home extends React.Component {
   render() {
@@ -18,7 +23,9 @@ class Home extends React.Component {
           </Row>
           <Row>
             <Col>
-              <Button variant="primary" className="text-center">Dar de alta PAS</Button>{' '}
+              <Button variant="primary" className="text-center">
+                <Link to="/FormPAS/">Dar de alta PAS</Link>
+              </Button>{' '}
             </Col>
             <Col>
               <Button variant="primary" className="text-center">Dar de alta Centro Sanitario</Button>{' '}
@@ -44,12 +51,6 @@ class Home extends React.Component {
             <Col>
               <Button variant="primary" className="text-center">Buscar Centro Sanitario</Button>{' '}
             </Col>
-          </Row>
-          <Row>
-          <Especialidad/>
-          </Row>
-          <Row>
-            <Centro/>
           </Row>
         </Container>
 
