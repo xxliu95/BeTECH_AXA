@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value="/providers")
+@CrossOrigin
+
 class ProvidersController {
 
     @Autowired
