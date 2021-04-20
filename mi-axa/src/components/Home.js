@@ -33,7 +33,9 @@ class Home extends React.Component {
           </Row>
           <Row>
             <Col>
-              <Button variant="primary" className="text-center">Dar de alta médico</Button>{' '}
+              <Button variant="primary" className="text-center">
+              <Link to="/CrearCuadroMedico/">Crear Cuadro Medico</Link>
+              </Button>{' '}
             </Col>
             <Col>
               <Button variant="primary" className="text-center">Crear Cuadro Médico</Button>{' '}

@@ -4,6 +4,7 @@ import Home from './components/Home';
 import Centro from './components/Centro';
 import Especialidad from './components/Especialidad';
 import FormPAS from './components/FormPAS';
+import CrearCuadroMedico from './components/CrearCuadroMedico';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -28,6 +29,9 @@ class App extends React.Component {
       </Route>
       <Route path="/FormPAS/">
           <FormPAS/>
+      </Route>
+      <Route path="/CrearCuadroMedico/">
+          <CrearCuadroMedico/>
       </Route>
       </Router>
     );
